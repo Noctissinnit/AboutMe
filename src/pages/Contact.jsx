@@ -29,7 +29,7 @@ export default function Contact() {
 
         {/* Primary CTA */}
         <a
-          href="mailto:emailkamu@gmail.com"
+          href="mailto:bimosatriaji6@gmail.com"
           className="inline-flex items-center gap-3 bg-primary text-white px-8 py-4 rounded-xl font-semibold soft-shadow hover:scale-105 active:scale-95 transition-transform"
         >
           <Mail size={20} />
