@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================
+   GLOBAL RESET & BASE
+======================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-black font-sans;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Hindari body flex bawaan Vite */
+#root {
+  width: 100%;
+}
+
+/* ========================
+   SECTION GLOBAL
+======================== */
+
+section {
+  scroll-margin-top: 100px;
+}
+
+/* ========================
+   NAVBAR LINK EFFECT
+======================== */
+
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #16a34a,
+    #22c55e
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.text-primary::after {
+  transform: scaleX(1);
+}
+
+/* ========================
+   UTILITIES
+======================== */
+
+/* Soft shadow (calm & clean) */
+.soft-shadow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Glow hijau (dipakai jarang) */
+.glow {
+  box-shadow: 0 0 30px rgba(22, 163, 74, 0.25);
+}
+
+/* Section title */
+.section-title {
+  @apply text-3xl md:text-4xl font-bold mb-4 text-black;
+}
+
+.section-subtitle {
+  @apply text-zinc-600 max-w-2xl mb-12;
+}
+
+/* ========================
+   LIVE BACKGROUND BLOBS
+======================== */
+
+.blob {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 9999px;
+  filter: blur(80px);
+  animation: float 22s infinite alternate ease-in-out;
+}
+
+.blob:nth-child(2) {
+  animation-duration: 28s;
+}
+
+.blob:nth-child(3) {
+  animation-duration: 34s;
+}
+
+@keyframes float {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(60px, -40px);
+  }
+}
+
+/* ========================
+   LINKS & BUTTONS
+======================== */
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ========================
+   REMOVE VITE DEFAULT STYLES
+======================== */
+
+/* Hapus color-scheme gelap */
+:root {
+  color-scheme: light;
+}
