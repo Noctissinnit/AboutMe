@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 import { NavLink, useLocation } from "react-router-dom"
 import CVButton from "./CVButton"
-import logoImage from "../assets/logo2.png"
+import logoImage from "../assets/logo3.png"
 
 const links = [
   { id: "home", label: "Home", type: "scroll" },
@@ -61,7 +61,7 @@ export default function Navbar() {
         <img 
         src={logoImage} 
         alt="Bimo.dev" 
-        className="h-20 w-auto"
+        className="h-10 w-auto"
         />
 
         {/* Desktop Menu */}
