@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 
 
-import teh from "../assets/logos/tehcapburungnuri.png"
+import teh from "../assets/logos/tehnuri.png"
 import atmi from "../assets/logos/logoatmi.png"
 import sw from "../assets/logos/sw.png"
 import uns from "../assets/logos/uns.png"

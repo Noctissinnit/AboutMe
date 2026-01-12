@@ -4,6 +4,7 @@ import voting from "../assets/projects/voting-app.png"
 import email from "../assets/projects/email-system.png"
 import mykos from "../assets/projects/mykos.png"
 import se from "../assets/projects/se.png"
+import tehnuri from "../assets/projects/tehnuri.png"
 
 const projects = [
   {
@@ -105,6 +106,24 @@ const projects = [
     github: "https://github.com/Noctissinnit/SoftwareEngineering.git",
     demo: "",
     },
+    {
+    id: 7,
+    title: "Landing Page for Teh Nuri Technology",
+    image: tehnuri,
+    desc: "Company landing page with portfolio and role-based content management.",
+    tech: ["CMS", "WordPress", "SEO"],
+
+    problem:
+      "Company information, services, and project showcases were not centralized in a single platform, making it difficult for visitors to understand the company profile and for internal teams to manage and update content efficiently.",
+
+    solution:
+      "Developed a public-facing landing page accessible without login to present company information, services, and portfolios, combined with a role-based content management system where admins manage content, staff update portfolios, and internal users review and curate displayed materials.",
+
+    role:
+      "Worked as a full-stack developer responsible for designing the system architecture, implementing authentication and role-based access control, building content and portfolio management features, and developing a clean, responsive public interface.",
+
+    website: "https://tehnuri.com",
+  }
 
 ]
 

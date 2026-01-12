@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { FiGithub, FiExternalLink } from "react-icons/fi"
+import { FiGithub, FiExternalLink, FiGlobe } from "react-icons/fi"
 
 export default function ProjectCard({
   title,
@@ -8,6 +8,7 @@ export default function ProjectCard({
   image,
   github,
   demo,
+  website,
   onOpen,
 }) {
   return (
@@ -48,7 +49,7 @@ export default function ProjectCard({
         </div>
 
         {/* Buttons */}
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
           {github && (
             <a
               href={github}
@@ -70,6 +71,18 @@ export default function ProjectCard({
               className="flex items-center gap-2 text-sm px-4 py-2 rounded-lg bg-primary text-white hover:opacity-90 transition"
             >
               <FiExternalLink /> Live Demo
+            </a>
+          )}
+
+          {website && (
+            <a
+              href={website}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-2 text-sm px-4 py-2 rounded-lg bg-zinc-900 text-white hover:bg-zinc-800 transition"
+            >
+              <FiGlobe /> Website
             </a>
           )}
         </div>
