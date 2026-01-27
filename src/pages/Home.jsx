@@ -79,7 +79,9 @@ export default function Home() {
             opacity: { duration: 0.6 },
             y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
           }}
-          className="w-120 h-120 object-cover rounded-2xl mx-auto"
+          className="w-120 h-120 object-cover rounded-2xl mx-auto select-none"
+          draggable={false}
+          onContextMenu={(e) => e.preventDefault()}
         />
       </div>
     </section>

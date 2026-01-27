@@ -80,7 +80,9 @@ export default function About() {
             <img
               src={profileImage}
               alt="Bimo Satriaji"
-              className="relative w-80 h-80 object-cover rounded-cartoony border-4 border-primary shadow-lg transition-transform duration-500 group-hover:scale-105 cartoon-shadow"
+              className="relative w-80 h-80 object-cover rounded-cartoony border-4 border-primary shadow-lg transition-transform duration-500 group-hover:scale-105 cartoon-shadow select-none"
+              draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
             />
           </div>
         </motion.div>

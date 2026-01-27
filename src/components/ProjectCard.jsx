@@ -22,7 +22,9 @@ export default function ProjectCard({
         <img
           src={image}
           alt={title}
-          className="h-48 w-full object-cover group-hover:scale-110 transition duration-300"
+          className="h-48 w-full object-cover group-hover:scale-110 transition duration-300 select-none"
+          draggable={false}
+          onContextMenu={(e) => e.preventDefault()}
         />
       </div>
 

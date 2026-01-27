@@ -33,7 +33,9 @@ export default function ProjectModal({ project, onClose }) {
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-64 object-cover rounded-cartoony mb-6 border-3 border-primary"
+            className="w-full h-64 object-cover rounded-cartoony mb-6 border-3 border-primary select-none"
+            draggable={false}
+            onContextMenu={(e) => e.preventDefault()}
           />
 
           {/* Title */}
