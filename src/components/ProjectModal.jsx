@@ -19,7 +19,7 @@ export default function ProjectModal({ project, onClose }) {
           exit={{ scale: 0.95, opacity: 0 }}
           transition={{ duration: 0.3 }}
           onClick={(e) => e.stopPropagation()}
-          className="relative w-full max-w-3xl bg-white rounded-3xl p-8 overflow-y-auto max-h-[90vh]"
+          className="relative w-full max-w-3xl bg-white rounded-cartoony p-8 overflow-y-auto max-h-[90vh] border-4 border-primary cartoon-shadow"
         >
           {/* Close */}
           <button
@@ -33,15 +33,15 @@ export default function ProjectModal({ project, onClose }) {
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-64 object-cover rounded-2xl mb-6"
+            className="w-full h-64 object-cover rounded-cartoony mb-6 border-3 border-primary"
           />
 
           {/* Title */}
-          <h3 className="text-2xl font-bold mb-2">
+          <h3 className="text-2xl font-bold mb-2 text-black">
             {project.title}
           </h3>
 
-          <p className="text-zinc-600 mb-6">
+          <p className="text-zinc-700 mb-6 font-medium">
             {project.desc}
           </p>
 
@@ -50,7 +50,7 @@ export default function ProjectModal({ project, onClose }) {
             {project.tech.map((t) => (
               <span
                 key={t}
-                className="text-xs bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full"
+                className="text-xs font-semibold bg-primary text-white px-3 py-1 rounded-cartoony border border-primary"
               >
                 {t}
               </span>
@@ -82,7 +82,7 @@ export default function ProjectModal({ project, onClose }) {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-3 rounded-xl border border-zinc-200 hover:bg-zinc-100 transition"
+                className="flex items-center gap-2 px-5 py-3 rounded-cartoony border-2 border-zinc-900 text-zinc-900 font-semibold hover:bg-zinc-900 hover:text-white transition transform hover:scale-105"
               >
                 <FiGithub /> View Code
               </a>
@@ -93,7 +93,7 @@ export default function ProjectModal({ project, onClose }) {
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-3 rounded-xl bg-primary text-white hover:opacity-90 transition"
+                className="flex items-center gap-2 px-5 py-3 rounded-cartoony bg-primary text-white font-semibold hover:bg-primaryDark transition transform hover:scale-105"
               >
                 <FiExternalLink /> Live Demo
               </a>

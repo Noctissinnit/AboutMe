@@ -18,7 +18,7 @@ export default function Projects() {
     <>
       <section
         id="projects"
-        className="px-10 md:px-20 py-24 bg-zinc-50"
+        className="px-10 md:px-20 py-24 bg-gradient-to-br from-white via-blue-50 to-white"
       >
         {/* Header */}
         <motion.div
@@ -64,7 +64,7 @@ export default function Projects() {
           <div className="mt-14 flex justify-center">
             <button
               onClick={() => setVisibleCount(projects.length)}
-              className="px-8 py-4 rounded-xl border border-emerald-300 text-emerald-700 font-semibold hover:bg-emerald-50 transition"
+              className="px-8 py-4 rounded-cartoony border-3 border-primary text-primary font-bold hover:bg-primary hover:text-white transition transform hover:scale-110 cartoon-shadow"
             >
               Load More Projects
             </button>

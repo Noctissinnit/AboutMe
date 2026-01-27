@@ -15,7 +15,20 @@ const links = [
 export default function Navbar() {
   const [active, setActive] = useState("home")
   const [open, setOpen] = useState(false)
+  const [hasScrolled, setHasScrolled] = useState(false)
   const location = useLocation()
+
+  /* ======================
+   * Scroll detection
+   * ====================== */
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 20)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   /* ======================
    * Active section observer
@@ -54,7 +67,11 @@ export default function Navbar() {
   }, [location.pathname])
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur border-b border-zinc-200">
+    <nav className={`fixed top-0 left-0 w-full z-50 backdrop-blur transition-all duration-300 ${
+      hasScrolled 
+        ? "bg-white/95 shadow-md" 
+        : "bg-transparent"
+    }`}>
       <div className="flex justify-between items-center px-6 md:px-20 py-4">
         
         {/* Logo */}

@@ -13,26 +13,26 @@ export default function ProjectCard({
 }) {
   return (
     <motion.div
-      whileHover={{ y: -6 }}
+      whileHover={{ y: -8 }}
       onClick={onOpen}
-      className="group cursor-pointer bg-white border border-zinc-200 rounded-2xl overflow-hidden hover:soft-shadow transition"
+      className="group cursor-pointer bg-white border-3 border-primary rounded-cartoony overflow-hidden cartoon-shadow hover:shadow-xl transition transform hover:scale-105"
     >
       {/* Thumbnail */}
       <div className="overflow-hidden">
         <img
           src={image}
           alt={title}
-          className="h-48 w-full object-cover group-hover:scale-105 transition duration-300"
+          className="h-48 w-full object-cover group-hover:scale-110 transition duration-300"
         />
       </div>
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 text-zinc-900">
+        <h3 className="text-xl font-bold mb-2 text-black">
           {title}
         </h3>
 
-        <p className="text-zinc-600 mb-4 text-sm leading-relaxed">
+        <p className="text-zinc-700 mb-4 text-sm leading-relaxed">
           {desc}
         </p>
 
@@ -41,7 +41,7 @@ export default function ProjectCard({
           {tech.map((t) => (
             <span
               key={t}
-              className="text-xs bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full"
+              className="text-xs font-semibold bg-primary text-white px-3 py-1 rounded-cartoony border border-primary"
             >
               {t}
             </span>
@@ -56,7 +56,7 @@ export default function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center gap-2 text-sm px-4 py-2 rounded-lg border border-zinc-200 text-zinc-700 hover:bg-zinc-100 transition"
+              className="flex items-center gap-2 text-sm px-4 py-2 rounded-cartoony border-2 border-zinc-900 text-zinc-900 font-semibold hover:bg-zinc-900 hover:text-white transition transform hover:scale-105"
             >
               <FiGithub /> Code
             </a>
@@ -68,7 +68,7 @@ export default function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center gap-2 text-sm px-4 py-2 rounded-lg bg-primary text-white hover:opacity-90 transition"
+              className="flex items-center gap-2 text-sm px-4 py-2 rounded-cartoony bg-primary text-white font-semibold hover:bg-primaryDark transition transform hover:scale-105"
             >
               <FiExternalLink /> Live Demo
             </a>
@@ -80,7 +80,7 @@ export default function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center gap-2 text-sm px-4 py-2 rounded-lg bg-zinc-900 text-white hover:bg-zinc-800 transition"
+              className="flex items-center gap-2 text-sm px-4 py-2 rounded-cartoony bg-zinc-900 text-white font-semibold hover:bg-black transition transform hover:scale-105"
             >
               <FiGlobe /> Website
             </a>

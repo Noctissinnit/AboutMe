@@ -1,6 +1,6 @@
-
 import { motion } from "framer-motion"
 import profileImage from "../assets/profile/profile2.png"
+import { Github, Linkedin, Mail, MessageCircle } from "lucide-react"
 
 export default function About() {
   const techStack = [
@@ -10,6 +10,33 @@ export default function About() {
     "Tailwind CSS",
     "MySQL",
     "REST API",
+  ]
+
+  const socialLinks = [
+    {
+      icon: Mail,
+      href: "mailto:bimosatriaji6@gmail.com",
+      label: "Email",
+      color: "bg-red-500 hover:bg-red-600",
+    },
+    {
+      icon: Github,
+      href: "https://github.com/Noctissinnit",
+      label: "GitHub",
+      color: "bg-gray-900 hover:bg-black",
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/bimo-satriaji-571885318/",
+      label: "LinkedIn",
+      color: "bg-blue-600 hover:bg-blue-700",
+    },
+    {
+      icon: MessageCircle,
+      href: "https://wa.me/62",
+      label: "WhatsApp",
+      color: "bg-green-500 hover:bg-green-600",
+    },
   ]
 
   const containerVariants = {
@@ -31,7 +58,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="px-6 md:px-20 py-24 bg-gradient-to-b from-white to-emerald-50/30"
+      className="px-6 md:px-20 py-24 pt-40 bg-gradient-to-b from-white via-blue-50 to-white"
     >
       <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
         
@@ -44,16 +71,16 @@ export default function About() {
           className="flex justify-center relative"
         >
           {/* Decorative background elements */}
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-3xl blur-2xl transform -rotate-6 scale-105" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 to-transparent rounded-3xl transform rotate-3" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/10 rounded-cartoony blur-2xl transform -rotate-6 scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-cartoony transform rotate-3" />
           
           {/* Profile image */}
           <div className="relative z-10 group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primaryLight rounded-cartoony blur opacity-30 group-hover:opacity-50 transition duration-500" />
             <img
               src={profileImage}
               alt="Bimo Satriaji"
-              className="relative w-80 h-80 object-cover rounded-3xl border-2 border-white shadow-2xl transition-transform duration-500 group-hover:scale-105"
+              className="relative w-80 h-80 object-cover rounded-cartoony border-4 border-primary shadow-lg transition-transform duration-500 group-hover:scale-105 cartoon-shadow"
             />
           </div>
         </motion.div>
@@ -66,7 +93,7 @@ export default function About() {
           viewport={{ once: true }}
         >
           <motion.div variants={itemVariants}>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
               About Me
             </h2>
           </motion.div>
@@ -75,16 +102,16 @@ export default function About() {
             variants={itemVariants}
             className="text-zinc-700 mb-4 leading-relaxed text-lg"
           >
-            I'm a <span className="font-semibold text-emerald-700">Software Engineering student</span> 
+            I'm a <span className="font-bold text-primary">Software Engineering student</span> 
             {' '}with a strong interest in building scalable and maintainable web applications.
             I enjoy working on real-world systems that solve practical problems.
           </motion.p>
 
           <motion.p 
             variants={itemVariants}
-            className="text-zinc-600 mb-4 leading-relaxed"
+            className="text-zinc-700 mb-4 leading-relaxed font-medium"
           >
-            My experience mostly revolves around <span className="font-semibold text-zinc-800">
+            My experience mostly revolves around <span className="font-bold text-primary">
             Laravel-based backend systems</span> combined with clean and modern
             frontend interfaces. I'm comfortable working with role-based systems,
             internal tools, and data-driven applications.
@@ -92,7 +119,7 @@ export default function About() {
 
           <motion.p 
             variants={itemVariants}
-            className="text-zinc-600 mb-10 leading-relaxed"
+            className="text-zinc-700 mb-10 leading-relaxed font-medium"
           >
             I value clean architecture, clear communication, and continuous learning.
             I believe good software is not only functional, but also easy to understand
@@ -101,8 +128,8 @@ export default function About() {
 
           {/* Tech Stack with enhanced design */}
           <motion.div variants={itemVariants}>
-            <h3 className="font-bold mb-4 text-zinc-800 text-lg flex items-center gap-2">
-              <span className="w-1 h-6 bg-gradient-to-b from-emerald-500 to-teal-500 rounded-full" />
+            <h3 className="font-bold mb-4 text-black text-lg flex items-center gap-2">
+              <span className="w-1 h-6 bg-primary rounded-full" />
               Tech Focus
             </h3>
 
@@ -113,14 +140,37 @@ export default function About() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1, duration: 0.3 }}
-                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileHover={{ scale: 1.1, y: -3 }}
                   viewport={{ once: true }}
-                  className="px-5 py-2.5 text-sm font-medium rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 text-emerald-700 border border-emerald-200/50 shadow-sm hover:shadow-md transition-all duration-300 cursor-default"
+                  className="px-5 py-2.5 text-sm font-bold rounded-cartoony bg-primary text-white border-2 border-primary shadow-md hover:shadow-lg transition-all duration-300 cursor-default cartoon-shadow"
                 >
                   {tech}
                 </motion.span>
               ))}
             </div>
+          </motion.div>
+
+          {/* Social Media Links */}
+          <motion.div 
+            variants={itemVariants}
+            className="mt-12 flex gap-4"
+          >
+            {socialLinks.map((social) => {
+              const Icon = social.icon
+              return (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  target={social.label !== "Email" ? "_blank" : undefined}
+                  rel={social.label !== "Email" ? "noopener noreferrer" : undefined}
+                  whileHover={{ scale: 1.15, y: -3 }}
+                  className={`p-3 rounded-cartoony text-white cartoon-shadow hover:shadow-lg transition-all transform ${social.color}`}
+                  aria-label={social.label}
+                >
+                  <Icon size={24} />
+                </motion.a>
+              )
+            })}
           </motion.div>
 
           {/* Optional CTA button */}

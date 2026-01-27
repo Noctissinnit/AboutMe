@@ -17,13 +17,13 @@ const companies = [
 
 export default function CompanyLogos() {
   return (
-    <section className="px-10 md:px-20 py-16 bg-white border-t border-zinc-100">
+    <section className="px-10 md:px-20 py-16 bg-gradient-to-r from-white via-blue-50 to-white border-t-4 border-primary shadow-md">
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
         viewport={{ once: true }}
-        className="text-center text-sm text-zinc-500 mb-8"
+        className="text-center text-sm font-bold text-primary mb-8"
       >
         Trusted by institutions I’ve worked with
       </motion.p>
@@ -49,7 +49,7 @@ export default function CompanyLogos() {
               hidden: { opacity: 0, y: 10 },
               visible: { opacity: 1, y: 0 },
             }}
-            className="h-10 md:h-12 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition"
+            className="h-10 md:h-12 object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition transform hover:scale-110 duration-300"
           />
         ))}
       </motion.div>

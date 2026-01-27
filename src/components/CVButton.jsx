@@ -2,13 +2,13 @@ import { Download } from "lucide-react"
 
 export default function CVButton({ variant = "primary" }) {
   const base =
-    "inline-flex items-center gap-2 rounded-lg font-semibold transition-transform active:scale-95"
+    "inline-flex items-center gap-2 rounded-cartoony font-bold transition-all active:scale-95 transform"
 
   const styles = {
     primary:
-      "bg-primary text-white px-6 py-3 soft-shadow hover:scale-105",
+      "bg-primary text-white px-8 py-3 cartoon-shadow hover:scale-110 hover:-translate-y-1",
     outline:
-      "border border-primary text-primary px-6 py-3 hover:bg-primary hover:text-white",
+      "border-3 border-primary text-primary px-8 py-3 hover:bg-primary hover:text-white cartoon-shadow transform hover:scale-110 hover:-translate-y-1",
   }
 
   return (

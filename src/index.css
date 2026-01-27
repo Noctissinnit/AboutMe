@@ -11,10 +11,11 @@ html {
 }
 
 body {
-  @apply bg-white text-black font-sans;
+  @apply bg-gradient-to-br from-blue-50 via-white to-blue-50 text-black font-sans;
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-attachment: fixed;
 }
 
 /* Hindari body flex bawaan Vite */
@@ -48,8 +49,8 @@ section {
   height: 2px;
   background: linear-gradient(
     90deg,
-    #16a34a,
-    #22c55e
+    #2f486d,
+    #3d5a85
   );
   transform: scaleX(0);
   transform-origin: left;
@@ -70,9 +71,19 @@ section {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+/* Cartoon shadow */
+.cartoon-shadow {
+  box-shadow: 0 8px 16px rgba(47, 72, 109, 0.15), 4px 4px 0px rgba(63, 90, 133, 0.2);
+}
+
 /* Glow hijau (dipakai jarang) */
 .glow {
-  box-shadow: 0 0 30px rgba(22, 163, 74, 0.25);
+  box-shadow: 0 0 30px rgba(47, 72, 109, 0.3);
+}
+
+/* Glow cartoonish */
+.glow-cartoon {
+  box-shadow: 0 0 40px rgba(63, 90, 133, 0.4);
 }
 
 /* Section title */
