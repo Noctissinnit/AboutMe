@@ -2,13 +2,13 @@ import { Download } from "lucide-react"
 
 export default function CVButton({ variant = "primary" }) {
   const base =
-    "inline-flex items-center gap-2 rounded-cartoony font-bold transition-all active:scale-95 transform"
+    "inline-flex items-center justify-center gap-2 rounded-cartoon font-extrabold border-3 border-zinc-950 shadow-cartoon hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-cartoony active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#18181b] transition-all transform duration-150 select-none cursor-pointer"
 
   const styles = {
     primary:
-      "bg-primary text-white px-8 py-3 cartoon-shadow hover:scale-110 hover:-translate-y-1",
+      "bg-cyber-yellow text-zinc-950 px-6 py-3",
     outline:
-      "border-3 border-primary text-primary px-8 py-3 hover:bg-primary hover:text-white cartoon-shadow transform hover:scale-110 hover:-translate-y-1",
+      "bg-white text-zinc-950 px-6 py-3 hover:bg-cyber-yellow",
   }
 
   return (
@@ -17,8 +17,8 @@ export default function CVButton({ variant = "primary" }) {
       download
       className={`${base} ${styles[variant]}`}
     >
-      <Download size={18} />
-      Download CV
+      <Download size={18} className="stroke-[3px]" />
+      <span>Download CV</span>
     </a>
   )
 }

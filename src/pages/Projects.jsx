@@ -64,7 +64,7 @@ export default function Projects() {
           <div className="mt-14 flex justify-center">
             <button
               onClick={() => setVisibleCount(projects.length)}
-              className="px-8 py-4 rounded-cartoony border-3 border-primary text-primary font-bold hover:bg-primary hover:text-white transition transform hover:scale-110 cartoon-shadow"
+              className="px-8 py-4 rounded-cartoon border-3 border-zinc-950 text-zinc-950 font-extrabold bg-white shadow-cartoon hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-cartoony active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#18181b] transition-all transform duration-150 select-none cursor-pointer"
             >
               Load More Projects
             </button>

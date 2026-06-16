@@ -5,6 +5,8 @@ import email from "../assets/projects/email-system.png"
 import mykos from "../assets/projects/mykos.png"
 import se from "../assets/projects/se.png"
 import tehnuri from "../assets/projects/tehnuri.png"
+import enterplex from "../assets/projects/enterplex.png"
+import korsa from "../assets/projects/korsa.png"
 
 const projects = [
   {
@@ -19,7 +21,7 @@ const projects = [
       "Built a centralized booking system with validation, calendar sync, and email notifications.",
     role:
       "Full-stack developer responsible for system design, backend logic, and UI implementation.",
-    github: "https://github.com/Noctissinnit/ruangan.git",
+   
     demo: "",
   },
   {
@@ -37,7 +39,7 @@ const projects = [
     role:
     "Handled full-stack development including database design, backend business logic, AJAX-based interactions, and responsive user interface implementation.",
 
-    github: "",
+    
     demo: "",
   },
   {
@@ -55,7 +57,7 @@ const projects = [
     role:
     "Designed the voting flow, implemented backend logic for secure vote handling, managed database structure, and developed the frontend interface for both users and administrators.",
 
-    github: "https://github.com/Noctissinnit/VotingSystem.git",
+   
     demo: "",
   },
   {
@@ -73,7 +75,7 @@ const projects = [
     role:
     "Responsible for backend email logic, Excel data processing, SMTP configuration, and building the admin interface for managing recipients and email content.",
 
-    github: "https://github.com/Noctissinnit/AtmiBlast.git",
+   
     demo: "",
   },
     {
@@ -88,7 +90,7 @@ const projects = [
         "Developed a centralized kos management system with role-based access control allowing owners to monitor properties, admins to manage data, and users to view room availability and submit requests.",
     role:
         "Designed system architecture, implemented role-based authorization, developed backend logic for room and tenant management, and built responsive user interfaces.",
-    github: "https://github.com/Noctissinnit/MyKos.git",
+    
     demo: "",
     },
     {
@@ -103,7 +105,7 @@ const projects = [
         "Built a public-facing landing page accessible without authentication, combined with a role-based system where admins manage content, lecturers review portfolios, and students showcase their work.",
     role:
         "Handled full-stack development including authentication flow, role-based access, portfolio management features, and public-facing UI for non-authenticated users.",
-    github: "https://github.com/Noctissinnit/SoftwareEngineering.git",
+    
     demo: "",
     },
     {
@@ -123,6 +125,30 @@ const projects = [
       "Worked as a full-stack developer responsible for designing the system architecture, implementing authentication and role-based access control, building content and portfolio management features, and developing a clean, responsive public interface.",
 
     website: "https://tehnuri.com",
+  },
+  {
+    id: 8,
+    title: "Enterplex",
+    image: enterplex,
+    desc: "Sistem Human Resource Management (HRM) untuk perusahaan dengan fitur manajemen karyawan, absensi, dan penggajian.",
+    tech: ["Next.js","Rest API", "MySQL", "Tailwind CSS","Payroll System", "Attendance Tracking", "Employee Management", "Role-Based Access Control"],
+    problem: "Dalam banyak perusahaan, manajemen sumber daya manusia seringkali dilakukan secara manual atau menggunakan beberapa sistem terpisah, yang menyebabkan inefisiensi dalam pelacakan data karyawan, absensi, dan penggajian. Hal ini dapat mengakibatkan kesalahan dalam perhitungan gaji, kesulitan dalam memantau kehadiran, dan kurangnya transparansi dalam manajemen karyawan.",
+    solution: "Membangun sistem Human Resource Management (HRM) terintegrasi yang memungkinkan perusahaan untuk mengelola data karyawan, absensi, dan penggajian dalam satu platform. Sistem ini menyediakan fitur untuk menyimpan informasi karyawan, mencatat absensi secara real-time, dan menghitung gaji berdasarkan data yang tersimpan, sehingga meningkatkan efisiensi dan akurasi dalam manajemen sumber daya manusia.",
+    role: "Sebagai pengembang full-stack, saya bertanggung jawab untuk merancang arsitektur sistem, mengimplementasikan logika backend untuk manajemen data karyawan, absensi, dan penggajian, serta membangun antarmuka pengguna yang responsif dan mudah digunakan untuk memudahkan interaksi dengan sistem.",
+    
+    demo: "",
+  },
+  {
+    id: 9,
+    title: "Korsa",
+    image: korsa,
+    desc: "Sistem Manajemen keperluan organisasi kampus dengan fitur manajemen anggota, manajemen kegiatan, kas, manajemen asset, penerbitan sertifikat dan penerbitan surat.",
+    tech: ["Laravel", "MySQL", "Bootstrap", "SSO","Certificate Generation", "Asset Management", "Event Management"],
+    problem: "Banyak organisasi kampus menghadapi tantangan dalam mengelola berbagai aspek operasional mereka, seperti manajemen anggota, kegiatan, keuangan, aset, serta penerbitan sertifikat dan surat. Proses manual atau penggunaan beberapa sistem terpisah seringkali menyebabkan inefisiensi, kesalahan data, dan kesulitan dalam koordinasi antar anggota organisasi.",
+    solution: "Membangun sistem manajemen organisasi kampus yang terintegrasi, memungkinkan organisasi untuk mengelola anggota, kegiatan, keuangan, aset, serta penerbitan sertifikat dan surat dalam satu platform. Sistem ini menyediakan fitur untuk menyimpan data anggota, merencanakan dan melacak kegiatan, mengelola kas dan aset organisasi, serta memfasilitasi penerbitan sertifikat dan surat secara efisien.",
+    role: "Sebagai pengembang full-stack, saya bertanggung jawab untuk merancang arsitektur sistem, mengimplementasikan logika backend untuk manajemen data anggota, kegiatan, keuangan, aset, serta penerbitan sertifikat dan surat, serta membangun antarmuka pengguna yang responsif dan mudah digunakan untuk memudahkan interaksi dengan sistem.",
+    
+    demo: "",
   }
 
 ]

@@ -66,32 +66,36 @@ export default function Navbar() {
     }
   }, [location.pathname])
 
+
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 backdrop-blur transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
       hasScrolled 
-        ? "bg-white/95 shadow-md" 
-        : "bg-transparent"
+        ? "bg-white border-b-3 border-zinc-950 shadow-cartoon py-3" 
+        : "bg-transparent py-5"
     }`}>
-      <div className="flex justify-between items-center px-6 md:px-20 py-4">
+      <div className="flex justify-between items-center px-6 md:px-20">
         
         {/* Logo */}
-        <img 
-        src={logoImage} 
-        alt="Bimo.dev" 
-        className="h-10 w-auto"
-        />
+        <div className="flex items-center gap-2">
+          <img 
+            src={logoImage} 
+            alt="Bimo.dev" 
+            className="h-10 w-auto border-2 border-zinc-950 rounded-lg p-1 bg-white shadow-[2px_2px_0px_#18181b]"
+          />
+          <span className="font-extrabold text-xl tracking-tight font-display hidden sm:inline text-zinc-950">BIMO.DEV</span>
+        </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-8 text-sm">
+        <ul className="hidden md:flex gap-4 text-sm">
           {links.map((link) => (
             <li key={link.id}>
               {link.type === "scroll" ? (
                 <a
                   href={`/#${link.id}`}
-                  className={`nav-link ${
+                  className={`border-2 px-3 py-1.5 font-extrabold rounded-cartoon transition-all duration-150 block ${
                     active === link.id
-                      ? "text-primary font-semibold"
-                      : "text-zinc-600 hover:text-black"
+                      ? "bg-cyber-yellow text-zinc-950 border-zinc-950 shadow-[2px_2px_0px_#18181b]"
+                      : "bg-transparent text-zinc-700 border-transparent hover:border-zinc-950 hover:bg-zinc-100 hover:text-zinc-950"
                   }`}
                 >
                   {link.label}
@@ -100,10 +104,10 @@ export default function Navbar() {
                 <NavLink
                   to="/about"
                   className={({ isActive }) =>
-                    `nav-link ${
+                    `border-2 px-3 py-1.5 font-extrabold rounded-cartoon transition-all duration-150 block ${
                       isActive
-                        ? "text-primary font-semibold"
-                        : "text-zinc-600 hover:text-black"
+                        ? "bg-cyber-yellow text-zinc-950 border-zinc-950 shadow-[2px_2px_0px_#18181b]"
+                        : "bg-transparent text-zinc-700 border-transparent hover:border-zinc-950 hover:bg-zinc-100 hover:text-zinc-950"
                     }`
                   }
                 >
@@ -122,26 +126,26 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-zinc-800"
+          className="md:hidden text-zinc-950 border-3 border-zinc-950 p-2 rounded-cartoon bg-white shadow-[2px_2px_0px_#18181b] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#18181b] transition-all"
         >
-          {open ? <X size={26} /> : <Menu size={26} />}
+          {open ? <X size={24} className="stroke-[3px]" /> : <Menu size={24} className="stroke-[3px]" />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-white/95 backdrop-blur px-6 pb-6 border-t border-zinc-200">
-          <ul className="flex flex-col gap-4 mb-6">
+        <div className="md:hidden absolute top-full left-0 w-full bg-white border-b-3 border-zinc-950 px-6 py-6 shadow-cartoon flex flex-col gap-6">
+          <ul className="flex flex-col gap-3">
             {links.map((link) => (
               <li key={link.id}>
                 {link.type === "scroll" ? (
                   <a
                     href={`/#${link.id}`}
                     onClick={() => setOpen(false)}
-                    className={`block py-2 ${
+                    className={`border-2 px-4 py-2 font-extrabold rounded-cartoon transition-all duration-150 block ${
                       active === link.id
-                        ? "text-primary font-semibold"
-                        : "text-zinc-600"
+                        ? "bg-cyber-yellow text-zinc-950 border-zinc-950 shadow-[2px_2px_0px_#18181b]"
+                        : "bg-transparent text-zinc-700 border-transparent hover:border-zinc-950 hover:bg-zinc-50"
                     }`}
                   >
                     {link.label}
@@ -151,10 +155,10 @@ export default function Navbar() {
                     to="/about"
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
-                      `block py-2 ${
+                      `border-2 px-4 py-2 font-extrabold rounded-cartoon transition-all duration-150 block ${
                         isActive
-                          ? "text-primary font-semibold"
-                          : "text-zinc-600"
+                          ? "bg-cyber-yellow text-zinc-950 border-zinc-950 shadow-[2px_2px_0px_#18181b]"
+                          : "bg-transparent text-zinc-700 border-transparent hover:border-zinc-950 hover:bg-zinc-50"
                       }`
                     }
                   >

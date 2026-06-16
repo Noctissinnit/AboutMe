@@ -11,16 +11,19 @@ html {
 }
 
 body {
-  @apply bg-gradient-to-br from-blue-50 via-white to-blue-50 text-black font-sans;
+  @apply bg-zinc-50 text-zinc-900 font-sans;
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-image: linear-gradient(to right, rgba(24, 24, 27, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(24, 24, 27, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
   background-attachment: fixed;
 }
 
-/* Hindari body flex bawaan Vite */
-#root {
-  width: 100%;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 /* ========================
@@ -68,31 +71,33 @@ section {
 
 /* Soft shadow (calm & clean) */
 .soft-shadow {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  @apply shadow-cartoon;
 }
 
 /* Cartoon shadow */
 .cartoon-shadow {
-  box-shadow: 0 8px 16px rgba(47, 72, 109, 0.15), 4px 4px 0px rgba(63, 90, 133, 0.2);
+  @apply shadow-cartoon;
 }
 
-/* Glow hijau (dipakai jarang) */
-.glow {
-  box-shadow: 0 0 30px rgba(47, 72, 109, 0.3);
+/* Brutalist Button Utility */
+.btn-brutalist {
+  border-width: 3px;
+  @apply border-zinc-950 font-bold px-6 py-3 rounded-cartoon bg-white text-zinc-950 shadow-cartoon hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-cartoony active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#18181b] transition-all transform duration-150 select-none;
 }
 
-/* Glow cartoonish */
-.glow-cartoon {
-  box-shadow: 0 0 40px rgba(63, 90, 133, 0.4);
+/* Brutalist Card Utility */
+.card-brutalist {
+  border-width: 3px;
+  @apply border-zinc-950 rounded-cartoony bg-white p-6 shadow-cartoon hover:-translate-y-1 hover:shadow-cartoony transition-all duration-300;
 }
 
 /* Section title */
 .section-title {
-  @apply text-3xl md:text-4xl font-bold mb-4 text-black;
+  @apply text-4xl md:text-5xl font-extrabold mb-4 text-zinc-900 tracking-tight;
 }
 
 .section-subtitle {
-  @apply text-zinc-600 max-w-2xl mb-12;
+  @apply text-zinc-600 max-w-2xl mb-12 font-medium text-lg;
 }
 
 /* ========================

@@ -6,26 +6,37 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["'Plus Jakarta Sans'", "sans-serif"],
+        display: ["'Space Grotesk'", "sans-serif"],
+        mono: ["'JetBrains Mono'", "monospace"],
+      },
       colors: {
         primary: "#2f486d",
         primaryLight: "#3d5a85",
-        primaryDark: "#223148",
-        dark: "#223148",
-        accent: "#f3eac0",
-        neutral: "#d2c7b8",
-        cartoon: {
-          blue: "#2f486d",
-          lightBlue: "#3d5a85",
-          cream: "#f3eac0",
-        },
+        primaryDark: "#1e2c41",
+        dark: "#18181b",
+        accent: "#FEE135", // Cyber Yellow
+        neutral: "#f4f4f5",
+        "cyber-yellow": "#FEE135",
+        "cyber-orange": "#ff5e36",
+        "cyber-blue": "#3b82f6",
+        "cyber-green": "#4ade80",
+        "cyber-pink": "#f472b6",
+      },
+      borderWidth: {
+        "3": "3px",
+        "4": "4px",
+        "6": "6px",
       },
       borderRadius: {
-        cartoon: "1.5rem",
-        cartoony: "2rem",
+        cartoon: "1rem",
+        cartoony: "1.5rem",
       },
       boxShadow: {
-        cartoon: "0 8px 16px rgba(47, 72, 109, 0.15), 4px 4px 0px rgba(63, 90, 133, 0.2)",
-        cartoony: "0 12px 24px rgba(47, 72, 109, 0.2), 6px 6px 0px rgba(63, 90, 133, 0.15)",
+        cartoon: "4px 4px 0px #18181b",
+        cartoony: "6px 6px 0px #18181b",
+        brutalist: "8px 8px 0px #18181b",
       },
     },
   },
