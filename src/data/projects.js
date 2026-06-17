@@ -7,6 +7,8 @@ import se from "../assets/projects/se.png"
 import tehnuri from "../assets/projects/tehnuri.png"
 import enterplex from "../assets/projects/enterplex.png"
 import korsa from "../assets/projects/korsa.png"
+import maggot from "../assets/projects/maggot.png"
+import ahs from "../assets/projects/ahs.png"
 
 const projects = [
   {
