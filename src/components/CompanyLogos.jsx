@@ -6,6 +6,7 @@ import atmi from "../assets/logos/logoatmi.png"
 import sw from "../assets/logos/sw.png"
 import uns from "../assets/logos/uns.png"
 import upitra from "../assets/logos/logokampus.png"
+import ahs from "../assets/logos/ahs.png"
 
 
 const companies = [
@@ -14,6 +15,7 @@ const companies = [
   { name: "Klinik Seger Waras", logo: sw },
   { name: "Universitas Sebelas Maret", logo: uns },
   { name: "Universitas Pignatelli Triputra", logo: upitra },
+  { name: "Alam Hijau Selaras", logo: ahs },
 ]
 
 export default function CompanyLogos() {

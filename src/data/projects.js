@@ -149,6 +149,28 @@ const projects = [
     role: "Sebagai pengembang full-stack, saya bertanggung jawab untuk merancang arsitektur sistem, mengimplementasikan logika backend untuk manajemen data anggota, kegiatan, keuangan, aset, serta penerbitan sertifikat dan surat, serta membangun antarmuka pengguna yang responsif dan mudah digunakan untuk memudahkan interaksi dengan sistem.",
     
     demo: "",
+  },
+  {
+    id: 10,
+    title: "Maggot Marketplace",
+    image: maggot,
+    desc: "Sistem marketplace untuk jual beli maggot dengan fitur manajemen produk, transaksi, dan pengiriman.",
+    tech: ["Role-Based Access Control", "Vite", "Tailwind CSS", "MySQL", "Payment Integration", "Order Management", "Product Management"],
+    problem: "Untuk mengurangi limbah organik, banyak peternak maggot menghadapi kesulitan dalam memasarkan produk mereka secara efektif. Proses jual beli yang masih dilakukan secara manual atau melalui platform yang tidak terintegrasi menyebabkan inefisiensi, kesulitan dalam mengelola transaksi, dan keterbatasan dalam menjangkau pasar yang lebih luas.",
+    solution: "Membangun sistem marketplace untuk jual beli maggot yang terintegrasi, memungkinkan peternak untuk memasarkan produk mereka secara efektif dan pelanggan untuk membeli produk dengan mudah. Sistem ini menyediakan fitur untuk mengelola produk, transaksi, dan pengiriman dalam satu platform.",
+    role: "Sebagai pengembang full-stack, saya bertanggung jawab untuk merancang arsitektur sistem, mengimplementasikan logika backend untuk manajemen data produk, transaksi, dan pengiriman, serta membangun antarmuka pengguna yang responsif dan mudah digunakan untuk memudahkan interaksi dengan sistem.",
+    demo: "",
+  },
+  {
+    id: 11,
+    title: "PT Alam Hijau Selaras Maintenance Hub",
+    image: ahs,
+    desc: "Sistem maintenance mesin untuk perusahaan dengan fitur manajemen mesin, jadwal maintenance, dan pelacakan riwayat perawatan.",
+    tech: ["Laravel", "MySQL", "Bootstrap", "Real-Time Collaboration", "Task Management", "Project Planning"],
+    problem: "Banyak tim menghadapi tantangan dalam mengelola proyek mereka secara efektif, terutama dalam hal perencanaan, pelacakan kemajuan, dan kolaborasi antar anggota tim. Proses manual atau penggunaan beberapa alat yang tidak terintegrasi seringkali menyebabkan inefisiensi, kesalahan data, dan kesulitan dalam koordinasi antar anggota tim.",
+    solution: "Membangun sistem manajemen proyek yang terintegrasi, memungkinkan tim untuk merencanakan, melacak kemajuan, dan berkolaborasi secara efektif dalam satu platform. Sistem ini menyediakan fitur untuk mengelola tugas, merencanakan proyek, dan memfasilitasi kolaborasi real-time antar anggota tim.",
+    role: "Sebagai pengembang full-stack, saya bertanggung jawab untuk merancang arsitektur sistem, mengimplementasikan logika backend untuk manajemen data proyek, tugas, dan kolaborasi, serta membangun antarmuka pengguna yang responsif dan mudah digunakan untuk memudahkan interaksi dengan sistem.",
+    demo: "",
   }
 
 ]
