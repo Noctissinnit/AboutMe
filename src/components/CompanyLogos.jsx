@@ -6,7 +6,7 @@ import atmi from "../assets/logos/logoatmi.png"
 import sw from "../assets/logos/sw.png"
 import uns from "../assets/logos/uns.png"
 import upitra from "../assets/logos/logokampus.png"
-import ahs from "../assets/logos/ahs.png"
+import ahs from "../assets/logos/logoahs.png"
 
 
 const companies = [
