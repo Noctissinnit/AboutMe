@@ -20,7 +20,7 @@ const companies = [
 
 export default function CompanyLogos() {
   return (
-    <section className="px-6 md:px-20 py-12 bg-white border-b-4 border-zinc-950">
+    <section className="px-6 md:px-20 py-12 border-b-4 border-zinc-950">
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}

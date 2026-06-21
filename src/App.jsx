@@ -9,6 +9,9 @@ import Projects from "./pages/Projects"
 import Experience from "./pages/Experience"
 import Contact from "./pages/Contact"
 import CompanyLogos from "./components/CompanyLogos"
+import TechStackSection from "./components/TechStackSection"
+import CertificatesSection from "./components/CertificatesSection"
+import ServicesAndProcess from "./components/ServicesAndProcess"
 
 export default function App() {
   return (
@@ -23,8 +26,11 @@ export default function App() {
             <>
               <Home />
               <CompanyLogos />
+              <TechStackSection />
+              <ServicesAndProcess />
               <Projects />
               <Experience />
+              <CertificatesSection />
               <Contact />
             </>
           }

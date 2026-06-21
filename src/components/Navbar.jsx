@@ -6,8 +6,10 @@ import logoImage from "../assets/logo3.png"
 
 const links = [
   { id: "home", label: "Home", type: "scroll" },
+  { id: "stack", label: "Stack", type: "scroll" },
   { id: "projects", label: "Projects", type: "scroll" },
   { id: "experience", label: "Experience", type: "scroll" },
+  { id: "certificates", label: "Certificates", type: "scroll" },
   { id: "contact", label: "Contact", type: "scroll" },
   { id: "about", label: "About", type: "route" },
 ]

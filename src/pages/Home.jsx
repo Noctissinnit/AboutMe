@@ -1,26 +1,8 @@
-import { useState, useEffect, useRef } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import profile from "../assets/profile/hero-no-white.png"
 import CVButton from "../components/CVButton"
 
 // === RETRO AUDIO SYNTHESIZER (Web Audio API) ===
-const playClickSound = () => {
-  try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)()
-    const osc = ctx.createOscillator()
-    const gain = ctx.createGain()
-    osc.type = "sine"
-    osc.frequency.setValueAtTime(850, ctx.currentTime)
-    osc.frequency.exponentialRampToValueAtTime(150, ctx.currentTime + 0.08)
-    gain.gain.setValueAtTime(0.04, ctx.currentTime)
-    gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.08)
-    osc.connect(gain)
-    gain.connect(ctx.destination)
-    osc.start()
-    osc.stop(ctx.currentTime + 0.08)
-  } catch (e) {}
-}
-
 const playDragSound = () => {
   try {
     const ctx = new (window.AudioContext || window.webkitAudioContext)()
@@ -38,149 +20,16 @@ const playDragSound = () => {
   } catch (e) {}
 }
 
-const playSuccessSound = () => {
-  try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)()
-    const notes = [523.25, 659.25, 783.99, 1046.50] // C5, E5, G5, C6
-    notes.forEach((freq, idx) => {
-      const osc = ctx.createOscillator()
-      const gain = ctx.createGain()
-      osc.type = "sine"
-      osc.frequency.setValueAtTime(freq, ctx.currentTime + idx * 0.08)
-      gain.gain.setValueAtTime(0.03, ctx.currentTime + idx * 0.08)
-      gain.gain.linearRampToValueAtTime(0, ctx.currentTime + idx * 0.08 + 0.15)
-      osc.connect(gain)
-      gain.connect(ctx.destination)
-      osc.start(ctx.currentTime + idx * 0.08)
-      osc.stop(ctx.currentTime + idx * 0.08 + 0.15)
-    })
-  } catch (e) {}
-}
-
 export default function Home() {
   const marqueeItems = [
     "Laravel Framework",
     "React JS",
-    "Next.js",
+    "Next JS",
     "Tailwind CSS",
     "MySQL Database",
     "RESTful API",
     "Software Engineering",
   ]
-
-  // === TERMINAL STATES ===
-  const [terminalOpen, setTerminalOpen] = useState(true)
-  const [terminalColor, setTerminalColor] = useState("text-green-400")
-  const colorsList = ["text-green-400", "text-amber-400", "text-cyan-400", "text-pink-400"]
-  const [history, setHistory] = useState([
-    "📟 Welcome to Bimo-OS v1.0.0 (Interactive Console)",
-    "Type a command below or click a shortcut to start.",
-    ""
-  ])
-  const terminalScreenRef = useRef(null)
-
-  // Auto-scroll terminal history internally inside the screen container
-  useEffect(() => {
-    if (terminalScreenRef.current) {
-      terminalScreenRef.current.scrollTop = terminalScreenRef.current.scrollHeight
-    }
-  }, [history])
-
-  // Window control actions
-  const toggleTerminal = () => {
-    playClickSound()
-    setTerminalOpen((prev) => !prev)
-  }
-
-  const cycleColor = () => {
-    playClickSound()
-    setTerminalColor((prev) => {
-      const idx = colorsList.indexOf(prev)
-      const nextIdx = (idx + 1) % colorsList.length
-      return colorsList[nextIdx]
-    })
-  }
-
-  const runDiagnostics = () => {
-    playClickSound()
-    const stats = [
-      `guest@bimo-os:~$ run-diagnostics`,
-      `[system] CPU Load     : 12%`,
-      `[system] Memory Usage : 2.4GB / 16GB`,
-      `[system] Coffee Level : 98% (Optimal)`,
-      `[system] Indomie Stock: 2 packs (Critical!)`,
-      `[system] Status       : Open for work and collaboration.`
-    ]
-    setHistory((prev) => [...prev, ...stats, ""])
-  }
-
-  // Command processor
-  const handleCommand = (cmd) => {
-    playClickSound()
-    let response = []
-    switch (cmd) {
-      case "bio":
-        response = [
-          `guest@bimo-os:~$ cat bio.txt`,
-          `--------------------------------------------------`,
-          `👤 Name   : Bimo Satriaji`,
-          `🎓 Major  : Software Engineering Student`,
-          `💻 Role   : Backend - Frontend Web Developer`,
-          `⚡ Weapon : PHP/Laravel, React, Tailwind, MySQL`,
-          `🍕 Fuel   : Coffee, Indomie, and clean code`,
-          `--------------------------------------------------`,
-          `"Building scalable applications is my passion!"`
-        ]
-        break
-      case "skills":
-        response = [
-          `guest@bimo-os:~$ show-skills.sh`,
-          `--------------------------------------------------`,
-          `PHP & Laravel     [████████████████░░░░] 80%`,
-          `React.js          [██████████████░░░░░░] 70%`,
-          `MySQL Database    [████████████████░░░░] 80%`,
-          `Tailwind CSS      [██████████████████░░] 90%`,
-          `RESTful APIs      [████████████████░░░░] 80%`,
-          `--------------------------------------------------`
-        ]
-        break
-      case "hack-mode":
-        response = [
-          `guest@bimo-os:~$ sudo hack-mode`,
-          `[sys] Requesting root privileges...`,
-          `[sys] ACCESS GRANTED. Initializing override...`,
-          `[sys] Overloading CPU (just kidding!)...`,
-          `[sys] Injecting coffee.dll...`,
-          `[sys] Hack complete! System under Bimo's control. 👾`
-        ]
-        setTimeout(() => {
-          playSuccessSound()
-        }, 150)
-        break
-      case "fortune":
-        const jokes = [
-          "If at first you don't succeed, call it version 1.0.",
-          "There are 10 types of people: those who understand binary, and those who don't.",
-          "A SQL query walks into a bar, walks up to two tables and asks, 'Can I join you?'",
-          "Weeks of coding can save you hours of planning.",
-          "Programming is like writing a book... except if you miss a comma, the whole book makes no sense.",
-          "It works on my machine!"
-        ]
-        const randomJoke = jokes[Math.floor(Math.random() * jokes.length)]
-        response = [
-          `guest@bimo-os:~$ roll-fortune`,
-          `🔮 Fortune Cookie says:`,
-          `"${randomJoke}"`
-        ]
-        break
-      case "clear":
-        setHistory([])
-        return
-      default:
-        response = [`guest@bimo-os:~$ ${cmd}`, `Command not found.`]
-    }
-    setHistory((prev) => [...prev, ...response, ""])
-  }
 
   return (
     <section
@@ -364,79 +213,6 @@ export default function Home() {
             </span>
           ))}
         </motion.div>
-      </div>
-
-      {/* Retro Terminal Simulator */}
-      <div className="mt-14 max-w-2xl w-full mx-auto relative z-20 px-4">
-        <AnimatePresence mode="wait">
-          {terminalOpen ? (
-            <motion.div
-              key="terminal-window"
-              initial={{ opacity: 0, scale: 0.95, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 10 }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="bg-zinc-950 border-3 border-zinc-950 rounded-cartoon shadow-cartoon overflow-hidden font-mono"
-            >
-              {/* Header */}
-              <div className="bg-zinc-900 border-b-3 border-zinc-950 px-4 py-2.5 flex items-center justify-between select-none">
-                <div className="flex items-center gap-1.5">
-                  <button
-                    onClick={toggleTerminal}
-                    className="w-3.5 h-3.5 rounded-full bg-cyber-orange border-2 border-zinc-950 hover:opacity-80 transition cursor-pointer"
-                    title="Minimize"
-                  />
-                  <button
-                    onClick={cycleColor}
-                    className="w-3.5 h-3.5 rounded-full bg-cyber-yellow border-2 border-zinc-950 hover:opacity-80 transition cursor-pointer"
-                    title="Cycle Colors"
-                  />
-                  <button
-                    onClick={runDiagnostics}
-                    className="w-3.5 h-3.5 rounded-full bg-cyber-green border-2 border-zinc-950 hover:opacity-80 transition cursor-pointer"
-                    title="Diagnostics"
-                  />
-                </div>
-                <span className="text-zinc-400 text-xs font-black">guest@bimo-terminal:~</span>
-                <span className="w-6"></span>
-              </div>
-              
-              {/* Screen */}
-              <div 
-                ref={terminalScreenRef}
-                className={`p-4 h-48 overflow-y-auto text-xs ${terminalColor} flex flex-col gap-1.5 scrollbar-thin`}
-              >
-                {history.map((line, idx) => (
-                  <div key={idx} className="whitespace-pre-wrap">{line}</div>
-                ))}
-              </div>
-
-              {/* Quick buttons */}
-              <div className="bg-zinc-900 border-t-3 border-zinc-950 p-2.5 flex flex-wrap gap-2 justify-start text-[10px] select-none">
-                {["bio", "skills", "hack-mode", "fortune", "clear"].map((cmd) => (
-                  <button
-                    key={cmd}
-                    onClick={() => handleCommand(cmd)}
-                    className="px-3 py-1 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-extrabold border-2 border-zinc-950 rounded shadow-[1.5px_1.5px_0px_#18181b] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[0.5px_0.5px_0px_#18181b] transition-all duration-100"
-                  >
-                    {cmd === "hack-mode" ? "👾 hack-mode" : cmd}
-                  </button>
-                ))}
-              </div>
-            </motion.div>
-          ) : (
-            <motion.button
-              key="terminal-trigger"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              onClick={toggleTerminal}
-              className="mx-auto block bg-zinc-950 text-white border-3 border-zinc-950 px-5 py-2.5 rounded-cartoon font-mono font-extrabold text-xs shadow-cartoon hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-cartoony active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#18181b] transition-all transform duration-150 cursor-pointer"
-            >
-              <span>📟 bimo_terminal.sh (Click to restore)</span>
-            </motion.button>
-          )}
-        </AnimatePresence>
       </div>
     </section>
   )
